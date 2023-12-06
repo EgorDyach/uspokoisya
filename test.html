@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Психо-тест</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/inputmask.min.js"></script>
+    <script type="module" src="js/test.js"></script>
+</head>
+<body>
+    <header class="testHeader">
+        <div class="container">
+            <img src="img/logo-black.png" alt="" class="testHeader__logo">
+            <a rel="stylesheet" href="index.html" class="testHeader__link">
+                <svg width="200" height="216" viewBox="0 0 200 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M105.444 2.58549C104.73 1.86935 103.881 1.30117 102.947 0.913491C102.013 0.525816 101.011 0.326263 99.9998 0.326263C98.9883 0.326263 97.9867 0.525816 97.0525 0.913491C96.1182 1.30117 95.2696 1.86935 94.5553 2.58549L2.27528 94.8655C1.56162 95.5809 0.99597 96.4301 0.610675 97.3643C0.22538 98.2985 0.0279926 99.2995 0.0297974 100.31V207.97C0.0297974 210.01 0.839991 211.966 2.28215 213.408C3.7243 214.85 5.68028 215.66 7.7198 215.66H76.9298C78.9693 215.66 80.9253 214.85 82.3675 213.408C83.8096 211.966 84.6198 210.01 84.6198 207.97V146.45H115.38V207.97C115.38 210.01 116.19 211.966 117.632 213.408C119.074 214.85 121.03 215.66 123.07 215.66H192.28C194.319 215.66 196.275 214.85 197.717 213.408C199.16 211.966 199.97 210.01 199.97 207.97V100.31C199.972 99.2995 199.774 98.2985 199.389 97.3643C199.004 96.4301 198.438 95.5809 197.724 94.8655L176.9 74.0564V23.41C176.9 21.3705 176.09 19.4145 174.647 17.9724C173.205 16.5302 171.249 15.72 169.21 15.72H153.83C151.79 15.72 149.834 16.5302 148.392 17.9724C146.95 19.4145 146.14 21.3705 146.14 23.41V43.2964L105.444 2.58549ZM15.4098 200.28V103.494L99.9998 18.9037L184.59 103.494V200.28H130.76V138.76C130.76 136.72 129.95 134.765 128.507 133.322C127.065 131.88 125.109 131.07 123.07 131.07H76.9298C74.8903 131.07 72.9343 131.88 71.4922 133.322C70.05 134.765 69.2398 136.72 69.2398 138.76V200.28H15.4098Z" fill="black"/>
+                    </svg>
+                    
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="mainTest">
+            <div class="container">
+                <ul class="mainTest__list list-reset flex">
+                    <li class="mainTest__item">
+                        <img src="img/test-1.svg" alt="">
+                    </li>
+                    <li class="mainTest__item">
+                        <img src="img/test-2.svg" alt="">
+                    </li>
+                    <li class="mainTest__item">
+                        <img src="img/test-3.svg" alt="">
+                    </li>
+                </ul>
+                <h1 class="mainTest__title">Пройдите тест и узнайте свой психорейтинг</h1>
+                <p class="mainTest__text">Психорейтинг - это цифровое значение, отображающее психологическое состояние игрока по шкале от 0 до 5. Где 0 - абсолютно несчастен, полная депрессия, либо глубокий невроз, а 5 - абсолютное счастье, эйфория.</p>
+                <button href="#" class="mainTest__link btn-reset">Пройти тест</button>
+            </div>
+        </section>
+        <div class="modal">
+            <div class="modal__container flex modal-container-addClient" data-target="modal"><button
+                    class="modal-close btn-reset"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z"
+                            fill="#B0B0B0"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z"
+                            fill="#B0B0B0"></path>
+                    </svg></button>
+                <div class="modal-content">
+                    <h2 class="modal-title">Оставить заявку</h2>
+                    <form action="mail.php" method="POST" class="modal-form">
+                        <div class="inputBox">
+                            <input type="text" id="name" required name="user_name">
+                            <span>Фамилия Имя Отчество*</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="tel" id="tel" required name="user_tel">
+                            <span>Телефон*</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" id="email" required name="user_email">
+                            <span>E-mail*</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="number" name="user_growUp" id="growUp">
+                            <span>Ваш возраст</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="user_text" id="textarea">
+                            <span>Опишите вашу проблему</span>
+                        </div>
+                        <button class="modal__submit btn-reset" id="add-form" type="submit">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
