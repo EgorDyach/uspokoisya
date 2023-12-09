@@ -1,8 +1,23 @@
 import { matrixTest } from './testMatrix.js';
 import { Modal } from './modal.js';
 import {quations} from './testProQuestions.js';
+
+function uncheckAll(currentCheckbox) {
+    var checkboxes = document.getElementsByName('option');
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i] !== currentCheckbox) {
+        checkboxes[i].checked = false;
+        checkboxes[i].parentNode.style.backgroundColor = 'blue'; // Возврат синего заднего фона
+      } else {
+        console.log(currentCheckbox.parentNode)
+        currentCheckbox.parentNode.style.backgroundColor = currentCheckbox.checked ? 'red' : 'blue'; // Установка красного или синего заднего фона
+      }
+    }
+  }
+
 document.addEventListener('DOMContentLoaded', function () {
     const mainTest = document.querySelector('.mainTest .container');
+    mainTest.classList='container testContainer'
     const testBtn = document.querySelector('.mainTest__link');
     let count = 0
     let firstAnswer = ''
@@ -12,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let reiting = 0.0
     const $test = document.createElement('div');
     const $quation = document.createElement('h2');
+    const $inputsDiv = document.createElement('div');
     const $inputYes = document.createElement('input');
     const $inputNo = document.createElement('input');
     const $inputMb = document.createElement('input');
@@ -19,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const $nextBtn1 = document.createElement('button');
     const $nextBtn2 = document.createElement('button');
     const $nextBtn3 = document.createElement('button');
-    let $inputMbDiv = document.createElement('div');
-    let $inputNoDiv = document.createElement('div');
-    let $inputYesDiv = document.createElement('div');
-    let $countText = document.createElement('h3');
+    const $inputMbLabel = document.createElement('label');
+    const $inputNoLabel = document.createElement('label');
+    const $inputYesLabel = document.createElement('label');
+    const $countText = document.createElement('h3');
     const $testBottom = document.createElement('div');
-
+    const $inputYesSpan = document.createElement('span');
+    const $inputNoSpan = document.createElement('span');
+    const $inputMbSpan = document.createElement('span');
 
     const $resultTitle = document.createElement('h2');
     const $resultText = document.createElement('p');
@@ -36,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const $resultLinks = document.createElement('div');
     const $resultLink = document.createElement('button');
     const $resultTest2 = document.createElement('a')
-
 
     const $ProTestTitle = document.createElement('h2')
     const $ProTestText = document.createElement('p');
@@ -71,31 +88,49 @@ document.addEventListener('DOMContentLoaded', function () {
         $inputYes.setAttribute('type', 'radio');
         $inputYes.setAttribute('value', 'Yes');
         $inputYes.classList = 'inputRadio';
+        $inputYes.addEventListener('click', function() {
+           $inputYesLabel.classList = 'inputYesDiv inputDiv checked'
+            $inputMbLabel.classList = 'inputMbDiv inputDiv'
+            $inputNoLabel.classList = 'inputNoDiv inputDiv'
+        })
         $inputYes.addEventListener('input', function () {
             $nextBtn1.removeAttribute('disabled')
             $nextBtn2.removeAttribute('disabled')
             $nextBtn3.removeAttribute('disabled')
         })
+        $inputYesSpan.classList = 'inputSpan'
 
         $inputNo.setAttribute('name', 'r1');
         $inputNo.setAttribute('type', 'radio');
         $inputNo.setAttribute('value', 'No');
         $inputNo.classList = 'inputRadio';
+        $inputNo.addEventListener('change', function() {
+            $inputYesLabel.classList = 'inputYesDiv inputDiv'
+            $inputMbLabel.classList = 'inputMbDiv inputDiv'
+            $inputNoLabel.classList = 'inputNoDiv inputDiv checked'
+        })
         $inputNo.addEventListener('input', function () {
             $nextBtn1.removeAttribute('disabled')
             $nextBtn2.removeAttribute('disabled')
             $nextBtn3.removeAttribute('disabled')
         })
+        $inputNoSpan.classList = 'inputSpan'
 
         $inputMb.setAttribute('name', 'r1');
         $inputMb.setAttribute('type', 'radio');
         $inputMb.setAttribute('value', 'Mb');
         $inputMb.classList = 'inputRadio';
+        $inputMb.addEventListener('change', function() {
+            $inputYesLabel.classList = 'inputYesDiv inputDiv'
+            $inputMbLabel.classList = 'inputMbDiv inputDiv checked'
+            $inputNoLabel.classList = 'inputNoDiv inputDiv'
+        })
         $inputMb.addEventListener('input', function () {
             $nextBtn1.removeAttribute('disabled')
             $nextBtn2.removeAttribute('disabled')
             $nextBtn3.removeAttribute('disabled')
         })
+        $inputMbSpan.classList = 'inputSpan'
 
         $backBtn.addEventListener('click', function () {
             count--;
@@ -149,26 +184,32 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
 
-        $inputYesDiv.classList = 'inputYesDiv inputDiv';
-        $inputYesDiv.append($inputYes, 'Да, и практикую часто.');
+        $inputYesLabel.classList = 'inputYesDiv inputDiv';
+        $inputYesLabel.append($inputYes,$inputYesSpan, 'Да, и практикую часто.');
 
-        $inputNoDiv.classList = 'inputNoDiv inputDiv';
-        $inputNoDiv.append($inputNo, 'Нет, и никогда не кричал на своего близкого.');
+        $inputNoLabel.classList = 'inputNoDiv inputDiv';
+        $inputNoLabel.append($inputNo, $inputNoSpan, 'Нет, и никогда не кричал на своего близкого.');
 
-        $inputMbDiv.classList = 'inputMbDiv inputDiv';
-        $inputMbDiv.append($inputMb, 'Да, но только если есть за что.');
+        $inputMbLabel.classList = 'inputMbDiv inputDiv';
+        $inputMbLabel.append($inputMb, $inputMbSpan,'Да, но только если есть за что.');
 
         mainTest.classList.add('mainTestCon')
 
         $quation.classList.add('test-quation');
+        $inputsDiv.classList = 'flex inputsDiv'
         $test.classList = 'flex test';
         $testBottom.classList = 'flex testBottom';
-        $test.append($quation, $inputYesDiv, $inputNoDiv, $inputMbDiv)
+        $inputsDiv.append($inputYesLabel, $inputNoLabel, $inputMbLabel);
+        
+        $test.append($quation, $inputsDiv)
         $testBottom.append($backBtn, $countText, $nextBtn1, $nextBtn2, $nextBtn3)
         mainTest.append($test, $testBottom)
         firstQuation()
     })
     function firstQuation() {
+        $inputYesLabel.classList = 'inputYesDiv inputDiv'
+        $inputMbLabel.classList = 'inputMbDiv inputDiv'
+        $inputNoLabel.classList = 'inputNoDiv inputDiv'
         $backBtn.disabled = true
         $inputNo.checked = false
         $inputYes.checked = false
@@ -188,19 +229,21 @@ document.addEventListener('DOMContentLoaded', function () {
         $nextBtn1.style.display = 'none'
         $nextBtn2.style.display = 'block'
         $nextBtn3.style.display = 'none'
-
+        $inputYesLabel.classList = 'inputYesDiv inputDiv'
+        $inputMbLabel.classList = 'inputMbDiv inputDiv'
+        $inputNoLabel.classList = 'inputNoDiv inputDiv'
         $backBtn.removeEventListener('click', firstQuation)
         $backBtn.removeEventListener('click', secondQuation)
         $backBtn.removeEventListener('click', ThirdQuation)
         $backBtn.addEventListener('click', firstQuation)
         secondAnswer = ''
         $quation.textContent = 'Обижались ли вы на членов вашей семьи, или случались ли ссоры за последний месяц?'
-        $inputYesDiv.textContent = ''
-        $inputYesDiv.append($inputYes, 'Да, такое случается регулярно.')
-        $inputMbDiv.textContent = ''
-        $inputMbDiv.append($inputMb, 'Да, но такое происходит редко.')
-        $inputNoDiv.textContent = ''
-        $inputNoDiv.append($inputNo, 'Нет, мы никогда не ругаемся.')
+        $inputYesLabel.textContent = ''
+        $inputYesLabel.append($inputYes,$inputYesSpan, 'Да, такое случается регулярно.')
+        $inputMbLabel.textContent = ''
+        $inputMbLabel.append($inputMb,$inputMbSpan, 'Да, но такое происходит редко.')
+        $inputNoLabel.textContent = ''
+        $inputNoLabel.append($inputNo, $inputNoSpan, 'Нет, мы никогда не ругаемся.')
         $inputNo.checked = false
         $inputYes.checked = false
         $inputMb.checked = false
@@ -211,6 +254,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function ThirdQuation() {
+        $inputYesLabel.classList = 'inputYesDiv inputDiv'
+        $inputMbLabel.classList = 'inputMbDiv inputDiv'
+        $inputNoLabel.classList = 'inputNoDiv inputDiv'
         $backBtn.removeEventListener('click', firstQuation)
         $backBtn.removeEventListener('click', secondQuation)
         $backBtn.removeEventListener('click', ThirdQuation)
@@ -222,12 +268,12 @@ document.addEventListener('DOMContentLoaded', function () {
         $nextBtn1.style.display = 'none'
         $nextBtn2.style.display = 'none'
         $nextBtn3.style.display = 'block'
-        $inputYesDiv.textContent = ''
-        $inputYesDiv.append($inputYes, 'Да, меня раздражает всё подряд.')
-        $inputMbDiv.textContent = ''
-        $inputMbDiv.append($inputMb, 'Такое иногда случается.')
-        $inputNoDiv.textContent = ''
-        $inputNoDiv.append($inputNo, 'Нет, меня всё устраивает и я счастлив.')
+        $inputYesLabel.textContent = ''
+        $inputYesLabel.append($inputYes,$inputYesSpan, 'Да, меня раздражает всё подряд.')
+        $inputMbLabel.textContent = ''
+        $inputMbLabel.append($inputMb,$inputMbSpan, 'Такое иногда случается.')
+        $inputNoLabel.textContent = ''
+        $inputNoLabel.append($inputNo,$inputNoSpan, 'Нет, меня всё устраивает и я счастлив.')
         $backBtn.removeAttribute('disabled')
         $nextBtn3.setAttribute('disabled', '')
         $countText.textContent = `${count} / 3`
@@ -246,14 +292,14 @@ document.addEventListener('DOMContentLoaded', function () {
         $resultProgressCon.classList = 'result__progressCon'
         let widthRes = `${(reiting) * 20}%`
         console.log(reiting)
-        $resultSpan.style.setProperty('width', widthRes);
+        $resultSpan.style.setProperty('margin-left', widthRes);
         $resultSpan.style.setProperty('content', reiting)
         $resultReiting.textContent = `Ваш психорейтинг: ${reiting}`
-        $resultTest2.textContent = 'Пройти более точный тест'
+        $resultTest2.textContent = 'Пройти точный тест'
         $resultTest2.addEventListener('click', TestPro)
         $resultTest2.classList = 'btn-reset result__link'
         $resultLinks.classList = 'result__links'
-        $resultLink.textContent = 'Оставить заявку на бесплатную консультацию'
+        $resultLink.textContent = 'Оставить заявку'
         $resultLink.dataset.path = 'modal'
         $resultLink.classList = 'btn-reset result__link'
         if (reiting < 3) {
@@ -277,19 +323,19 @@ document.addEventListener('DOMContentLoaded', function () {
         $ProResultPsyreit.classList ='result__reiting'
         $resultProgressCon.classList = 'result__progressCon'
         let widthRes = `${(Psyreiting) * 20}%`
-        $resultSpan.style.setProperty('width', widthRes);
+        $resultSpan.style.setProperty('margin-left', widthRes);
         $resultSpan.style.setProperty('content', Psyreiting)
         $ProResultPsyreit.textContent = `Ваш психорейтинг: ${Psyreiting}`
-        if(Psyreiting >4.5) {
+        if(Psyreiting >4.3) {
             $ProResultTitle.textContent = 'Вы великолепен! У вас один из самых высоких психорейтингов!'
             $ProResultText.textContent = `Вы точно победите в "Успокойся!", записывайтесь на бесплатную консультацию и выиграйте 300 000 рублей!`
-        } else if (Psyreiting <= 4.5 && Psyreiting > 4) {
+        } else if (Psyreiting <= 4.3 && Psyreiting > 3.7) {
             $ProResultTitle.textContent = 'Вы молодец! У вас хороший психорейтинг!'
             $ProResultText.textContent = `Ваши шансы на победу в "Успокойся!" высоки! Запишитесь на бесплатную консультацию и выиграйте 300 000 рублей!`
-        } else if (Psyreiting <= 4 && Psyreiting > 3.1) {
+        } else if (Psyreiting <= 3.7 && Psyreiting > 2.7) {
             $ProResultTitle.textContent = 'Ваш психорейтинг низкий!'
             $ProResultText.textContent = `Но мы можем это исправить вместе! Запишитесь на бесплатную консультацию, поучаствуйте в игре "Успокойся!" и выиграйте 300 000 рублей у таких же как и вы!`
-        } else if (Psyreiting <= 3.1 && Psyreiting >= 2.125) {
+        } else if (Psyreiting <= 2.7 && Psyreiting >= 2) {
             $ProResultTitle.textContent = 'У вас ужасно низкий психорейтинг!'
             $ProResultText.textContent = `Но мы можем помочь вам с этим! Запишитесь на бесплатную консультацию и мы с вами найдем выход!`
         } else {
@@ -302,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function TestPro() {
         mainTest.innerHTML = '';
+
         $ProTestTitle.textContent = 'Более точный тест на определение психорейтинга'
         $ProTestTitle.classList = 'result__title'
         $ProTestText.classList = 'result__text'
@@ -315,6 +362,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const $ProTestYes = document.createElement('button')
             const $ProTestNo = document.createElement('button')
             const $ProTestCount = document.createElement('span')
+            const $ProTestDiv = document.createElement('div');
+            $ProTestDiv.classList = 'proTestDiv'
             $ProTestCount.classList = 'countTitle'
             let counterYes = 0
             let index = 1
@@ -345,7 +394,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     ProResult(counterYes)
                 }
             })
-            mainTest.append($ProTestQuation, $ProTestYes, $ProTestNo,$ProTestCount)
+            $ProTestDiv.append($ProTestYes, $ProTestNo, $ProTestCount)
+            mainTest.append($ProTestQuation, $ProTestDiv)
         })
 
         mainTest.append($ProTestTitle, $ProTestText, $ProTestStart)
@@ -358,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function resultToCall() {
         $resultTitle.textContent = 'О нет! Ваш психорейтинг слишком низкий...'
-        $resultText.textContent = 'Но мы можем это исправить вместе! Записывайтесь на бесплатную консультацию с психологом, или '
+        $resultText.textContent = 'Но мы можем это исправить вместе! Записывайтесь на бесплатную консультацию с психологом, или пройдите точный тест!'
         // $resultImg.src = '../img/test__dislike.svg'
     }
 

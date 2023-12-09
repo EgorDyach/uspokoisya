@@ -32,7 +32,7 @@
     background-color: #5D88CA;
     padding: 115px 27px 0 50px;
     border-radius: 127px;
-    font-size: 105px;
+    font-size: 95px;
     font-style: normal;
     overflow: hidden;
     display: flex;
@@ -47,9 +47,9 @@
   }
 
 .hero__money::before {
-    font-size: 105px;
+    font-size: 95px;
 
-    content: 'Платим деньги';
+    content: 'Мы заплатим';
     position: absolute;
     height: 92%;
     top: 4%;
@@ -140,11 +140,11 @@
     }
 
     .hero__money {
-        font-size: 85px;
+        font-size: 62px;
     }
 
     .hero__money::before {
-        font-size: 85px;
+        font-size: 62px;
     }
 }
 
@@ -158,11 +158,11 @@
     }
 
     .hero__info {
-        padding: 50px 0px 55px 0px;
+        padding: 170px 0px 55px 0px;
     }
 
     .hero__money::before {
-        font-size: 65px;
+        font-size: 57px;
     }
 
     .hero {
@@ -342,11 +342,15 @@
 
 @media (max-width: 600px) {
   .hero__money, .hero__money::before {
-    font-size: 45px;
+    font-size: 37px;
   }
 
   .hero__money::before {
-    content: 'Платим деньги';
+    padding: 0;
+}
+
+  .hero__money::before {
+    content: 'Мы заплатим';
   }
 
      .header .header__linkToHome { 
