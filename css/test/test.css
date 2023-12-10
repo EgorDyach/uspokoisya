@@ -341,6 +341,7 @@ line-height: normal;
 
 .proTestDiv .inputDiv {
   width: 450px;
+  border: none;
 }
 
 .result__progressCon::after {

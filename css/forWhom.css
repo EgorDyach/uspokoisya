@@ -148,19 +148,20 @@ line-height: 100px;
     width: 70px;
 }
 
-.forWhom__card:hover > .front, .forWhom__card-active > .front{
-    transform: rotateY(-180deg);
-}
-
-
 .forWhom__btn-phone {
     display: none;
 }
 
-
-.forWhom__card:hover > .back,  .forWhom__card-active > .back{
-    transform: rotateY(0deg);
+@media (min-width: 1000px) {
+    .forWhom__card:hover > .front{
+        transform: rotateY(-180deg);
+    }
+    
+    .forWhom__card:hover > .back{
+        transform: rotateY(0deg);
+    }
 }
+
 
 .back {
     display: flex;
@@ -198,6 +199,24 @@ line-height: 100px;
         width: 45px;
         height: 45px;
     }
+/* 
+    .forWhom__card:hover > .front{
+        transform: rotateY(-0deg);
+    }
+    
+    .forWhom__card:hover > .back{
+        transform: rotateY(0)
+    } */
+
+
+        .forWhom__card-active > .front {
+            transform: rotateY(-180deg);
+        }
+        
+        .forWhom__card-active > .back {
+            transform: rotateY(0);
+        }
+
 }
 
 @media (max-width: 600px) {    

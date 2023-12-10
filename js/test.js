@@ -302,11 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $resultLink.textContent = 'Оставить заявку'
         $resultLink.dataset.path = 'modal'
         $resultLink.classList = 'btn-reset result__link'
-        if (reiting < 3) {
-            resultToCall()
-        } else {
-            resultToTest2()
-        }
+        resultToCall(reiting)
         mainTest.append($resultdiv)
     }
     
@@ -326,23 +322,19 @@ document.addEventListener('DOMContentLoaded', function () {
         $resultSpan.style.setProperty('margin-left', widthRes);
         $resultSpan.style.setProperty('content', Psyreiting)
         $ProResultPsyreit.textContent = `Ваш психорейтинг: ${Psyreiting}`
-        if(Psyreiting >4.3) {
-            $ProResultTitle.textContent = 'Вы великолепен! У вас один из самых высоких психорейтингов!'
-            $ProResultText.textContent = `Вы точно победите в "Успокойся!", записывайтесь на бесплатную консультацию и выиграйте 300 000 рублей!`
-        } else if (Psyreiting <= 4.3 && Psyreiting > 3.7) {
-            $ProResultTitle.textContent = 'Вы молодец! У вас хороший психорейтинг!'
-            $ProResultText.textContent = `Ваши шансы на победу в "Успокойся!" высоки! Запишитесь на бесплатную консультацию и выиграйте 300 000 рублей!`
-        } else if (Psyreiting <= 3.7 && Psyreiting > 2.7) {
-            $ProResultTitle.textContent = 'Ваш психорейтинг низкий!'
-            $ProResultText.textContent = `Но мы можем это исправить вместе! Запишитесь на бесплатную консультацию, поучаствуйте в игре "Успокойся!" и выиграйте 300 000 рублей у таких же как и вы!`
-        } else if (Psyreiting <= 2.7 && Psyreiting >= 2) {
-            $ProResultTitle.textContent = 'У вас ужасно низкий психорейтинг!'
-            $ProResultText.textContent = `Но мы можем помочь вам с этим! Запишитесь на бесплатную консультацию и мы с вами найдем выход!`
+        if(Psyreiting >4.5) {
+            $ProResultTitle.textContent = 'Поздравляю! Ты живешь счастливой жизнью!'
+            $ProResultText.textContent = `Зарази своим состоянием как можно больше людей!`
+        } else if (Psyreiting <= 4.5 && Psyreiting >= 4) {
+            $ProResultTitle.textContent = 'Ты почти счастливый человек.'
+            $ProResultText.textContent = `Но это "почти" может не изменится никогда, если ты не научишься работать со своим умом и управлять им. Путь к счастью займет немного времени, если ты захочешь.`
+        } else if (Psyreiting < 4 && Psyreiting >= 3) {
+            $ProResultTitle.textContent = 'Ты по большей части несчастен.'
+            $ProResultText.textContent = `Тебя редко что-то радует. Если захочешь, счастья может быть больше, но придется отказаться от ряда концепций, к которым ты привык.`
         } else {
-            $ProResultTitle.textContent = 'Ааааа, вы шизоид и невротик!!!'
-            $ProResultText.textContent = `Идите к психотерапевту, удалите наши номера, забудьте об "Успокойся!" и лечитесь!!!`
+            $ProResultTitle.textContent = 'Ты несчастен.'
+            $ProResultText.textContent = `Не волнуйся – это поправимо. Ты просто не знаешь инструментов, которые могут тебе помочь.`
         }
-        
         mainTest.append($ProResultTitle, $ProResultText, $ProResultPsyreit,$resultProgressCon, $resultImg, $resultLink)
     }
 
@@ -401,15 +393,23 @@ document.addEventListener('DOMContentLoaded', function () {
         mainTest.append($ProTestTitle, $ProTestText, $ProTestStart)
     }
 
-    function resultToTest2() {
-        $resultTitle.textContent = 'Вы молодец! У вас отличный психорейтинг! Но... не самообман ли это?'
-        $resultText.textContent = 'Оставьте заявку, и вы сможете проверить это на бесплатной консультации с психологом!'
-        // $resultImg.src = '../img/test__like.svg'
-    }
-    function resultToCall() {
-        $resultTitle.textContent = 'О нет! Ваш психорейтинг слишком низкий...'
-        $resultText.textContent = 'Но мы можем это исправить вместе! Записывайтесь на бесплатную консультацию с психологом, или пройдите точный тест!'
-        // $resultImg.src = '../img/test__dislike.svg'
+
+    function resultToCall(reiting) {
+        console.log(reiting)
+        if(reiting > 4.5) {
+            $resultTitle.textContent = 'Поздравляю! Ты живешь счастливой жизнью!'
+            $resultText.textContent = `Зарази своим состоянием как можно больше людей!`
+        } else if (reiting <= 4.5 && reiting >= 4) {
+            $resultTitle.textContent = 'Ты почти счастливый человек.'
+            $resultText.textContent = `Но это "почти" может не изменится никогда, если ты не научишься работать со своим умом и управлять им. Путь к счастью займет немного времени, если ты захочешь.`
+        } else if (reiting < 4 && reiting >= 3) {
+            $resultTitle.textContent = 'Ты по большей части несчастен.'
+            $resultText.textContent = `Тебя редко что-то радует. Если захочешь, счастья может быть больше, но придется отказаться от ряда концепций, к которым ты привык.`
+        } else {
+            $resultTitle.textContent = 'Ты несчастен.'
+            $resultText.textContent = `Не волнуйся – это поправимо. Ты просто не знаешь инструментов, которые могут тебе помочь.`
+        }
+        console.log(reiting, $resultText, $resultTitle)
     }
 
     const modal = new Modal({
