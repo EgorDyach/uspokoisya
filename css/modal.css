@@ -213,18 +213,38 @@ background: linear-gradient(180deg, #FF9D00 0%, #F73C5C 100%);
     .modal__container {
         width: 450px;
     }
+
+    .modal__container svg {
+        width: 40px;
+        height: auto;
+    }
+
+    .modal-close {
+        right: 15px;
+        top: 15px;
+    }
 }
 
 
 @media (max-width: 600px) {
     .modal__container {
-        width: 250px;
+        width: 300px;
         border-radius: 9px;
     }
 
     .modal-title {
         font-size: 20px;
         margin-bottom: 20px;
+    }
+
+    .modal__container svg {
+        width: 35px;
+        height: auto;
+    }
+
+    .modal-close {
+        right: 5px;
+        top: 5px;
     }
 
     .modal-content {

@@ -103,13 +103,13 @@ background: var(--gradient);
     }
 
     .qanda__list-pItem:nth-child(1) .qanda__list-pItem-text {
-        left: 0px;
-        top: 0px;
+        left: 20px;
+        top: 30px;
         transform: rotate(346deg);
     }
     .qanda__list-pItem:nth-child(2) .qanda__list-pItem-text {
-        right: 10px;
-        top: 0px;
+        right: 7px;
+        top: 30px;
         transform: rotate(13deg);
         max-width: 120px;
     }

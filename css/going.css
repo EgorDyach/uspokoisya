@@ -110,4 +110,8 @@ line-height: 75px; /* 100% */
         margin-right: -30px;
         line-height: 45px;
     }
+
+    .going__item-img {
+        width: 33%;
+}
 }

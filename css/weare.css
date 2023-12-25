@@ -104,9 +104,18 @@
   transform: scale(1);
 }
 
-.swiper-button-next, .swiper-button-prev {
-  width: unset;
-}
+/*.swiper-button-next, .swiper-button-prev {*/
+/*  width: unset;*/
+/*}*/
+
+/*.swiper-button-next {*/
+/*    left: unset;*/
+/*    right: 0;*/
+/*}*/
+
+/*.swiper-button-prev {*/
+/*    left: 0;*/
+/*}*/
 
 .weare__text {
   font-size: 17px;
