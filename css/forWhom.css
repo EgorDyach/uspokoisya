@@ -1,0 +1,259 @@
+.forWhom__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    max-width: 1760px;
+margin: 0 auto;
+}
+
+.forWhom {
+    text-align: center;
+    position: relative;
+}
+
+.center{
+    position: relative;
+}
+
+.forWhom__card{
+    cursor: pointer;
+    position: relative;
+    width: 40%;
+    aspect-ratio: 0.9165;
+    max-width: 637px;
+    border-radius: 50px;
+}
+
+.front,
+.back{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .4s linear;
+}
+
+.front::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #285497C4;
+}
+
+.forWhom__card:nth-child(1) .front{
+    background-image: url('../img/forWhom/forWhom_1.jpg');
+}
+
+.forWhom__card:nth-child(2) .front{
+    background-image: url('../img/forWhom/forWhom_2.jpg');
+}
+
+.forWhom__card:nth-child(3) .front{
+    background-image: url('../img/forWhom/forWhom_3.jpg');
+}
+
+.forWhom__card:nth-child(4) .front{
+    background-image: url('../img/forWhom/forWhom_4.jpg');
+}
+
+.forWhom__card {
+    margin-bottom: 100px;
+}
+
+.front{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+    transform:  rotateY(0deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.forWhom__front-title {
+    position: relative;
+    color: #fff;
+    word-break: keep-all;
+    text-align: center;
+font-size: clamp(15px, 3vw , 55px);
+font-style: normal;
+font-weight: 700;
+line-height: 1.3; 
+}
+
+.forWhom__front-title span {
+    background-color: #fff;
+    color: #285497;
+    border-radius: 10px;
+    font-size: 2.3vw;
+    padding: 3px 5px;
+}
+
+.back-text-content {
+    height: 40%;
+}
+
+.back{
+    transform: rotateY(180deg);
+    background-color: #f1f1f1;
+}
+
+.back-content{
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.forWhom__back-title {
+    color: #285497;
+text-align: center;
+font-size: clamp(18px, 3vw , 55px);
+font-style: normal;
+font-weight: 700;
+line-height: 127.273%; /* 127.273% */
+}
+
+.forWhom__title {
+    color: #FFF;
+text-align: center;
+font-size: 89px;
+max-width: 500px;
+font-style: normal;
+margin: 0 auto;
+text-align: center;
+font-weight: 700;
+margin-bottom: 100px;
+line-height: 100px;
+}
+
+.forWhom__btn {
+    width: 80px;
+    position: absolute;
+    top: -180px;
+    right: 80px;
+}
+
+.forWhom__btn svg {
+    width: 70px;
+}
+
+.forWhom__btn-phone {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .forWhom__card:hover > .front{
+        transform: rotateY(-180deg);
+    }
+    
+    .forWhom__card:hover > .back{
+        transform: rotateY(0deg);
+    }
+}
+
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .forWhom__title {
+        font-size: 48px;
+        line-height: 1.3;
+    }
+
+    .forWhom__card {
+        width: 51%;
+        margin-bottom: 50px;
+    }
+
+    .forWhom__btn {
+        display: none;
+    }
+
+    .forWhom__btn svg {
+        width: 80px;
+    }
+
+    .forWhom__btn-phone {
+        position: absolute;
+        display: block;
+        right: 15px;
+        top: -175px;
+    }
+
+    .forWhom__btn-phone svg {
+        width: 45px;
+        height: 45px;
+    }
+/* 
+    .forWhom__card:hover > .front{
+        transform: rotateY(-0deg);
+    }
+    
+    .forWhom__card:hover > .back{
+        transform: rotateY(0)
+    } */
+
+
+        .forWhom__card-active > .front {
+            transform: rotateY(-180deg);
+        }
+        
+        .forWhom__card-active > .back {
+            transform: rotateY(0);
+        }
+
+}
+
+@media (max-width: 600px) {    
+
+    .forWhom__card:not(:last-child) {
+        margin-bottom: 50px;
+    }
+
+    .forWhom__title {
+font-size: 20px;
+margin-bottom: 40px;
+line-height: normal;
+margin: 0 30% 40px;
+    }
+
+    .forWhom__card {
+        width: 80%;
+        border-radius: 10px;
+    }
+
+    .front, .back {
+        border-radius: 10px;
+    }
+
+    .back svg {
+        width: 30px;
+        aspect-ratio: 1;
+    }
+
+    .forWhom__front-title span{
+        font-size: 5.5vw;
+    }
+
+    .forWhom__btn-phone {
+        position: absolute;
+        display: block;
+        right: 15px;
+        top: -75px;
+    }
+}

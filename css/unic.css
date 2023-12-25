@@ -1,0 +1,213 @@
+.unic__title {
+    color: #FFF;
+    width: 100%;
+    background-color: var(--lightBlue);
+    padding: 25px;
+    text-align: center;
+    font-family: 'getVolp';
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 100px;
+    line-height: 80px;
+}
+
+.unic__img-768 {
+    display: none;
+}
+
+.unic__content {
+    background-image: url('../img/unic/unic__bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 30px 60px;
+}
+
+.unic__list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.unic__item-text {
+    color: var(--blueText);
+    text-align: center;
+    font-family: 'getVolp';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 15px 25px;
+    max-width: 80%;
+    border-radius: 32px;
+    background-color: var(--white);
+}
+
+.unic__item {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unic__item:nth-child(2n) {
+    justify-content: flex-start;
+}
+
+.unic__item:not(:nth-child(5)):not(:last-child) {
+    margin-bottom: 75px;
+}
+
+.unic__item:nth-child(1) .unic__item-text {
+    margin-top: -40px;
+}
+
+.unic__item:nth-child(2) .unic__item-text {
+    margin-top: -20px;
+}
+
+@media (max-width: 1600px) {
+    .unic__item-text {
+        font-size: 27px;
+        line-height: 30px;
+    }
+
+    .unic__title {
+        font-size: 51px;
+        line-height: 70px;
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .unic__item {
+        width: 34%;
+    }
+
+    .unic__item-text {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .unic__content {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .unic__content {
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+
+    .unic__title {
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 15px;
+    }
+
+    .unic__item {
+        position: relative;
+    }
+
+    .unic__item::before {
+        position: absolute;
+        left: 0px;
+        top: -15px;
+        color: rgba(255, 255, 255, 0.40);
+        text-align: center;
+        font-size: clamp(32px, 4vw, 48px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 15px;
+    }
+
+    .unic__item:nth-child(2n)::before {
+        left: unset;
+        right: 0px;
+    }
+
+    .unic__item:nth-child(1)::before {
+        content: '01';
+    }
+    .unic__item:nth-child(2)::before {
+        content: '02';
+    }
+    .unic__item:nth-child(3)::before {
+        content: '03';
+    }
+    .unic__item:nth-child(4)::before {
+        content: '04';
+    }
+    .unic__item:nth-child(5)::before {
+        content: '05';
+    }
+    .unic__item:nth-child(6)::before {
+        content: '06';
+    }
+
+    .unic__img-768 {
+        display: block;
+        height: 400px;
+        background-image: url('../img/unic/unic__bg-phone.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-bottom: 35px;
+    }
+
+    .unic__item:nth-child(n) .unic__item-text {
+        margin: 0;
+    }
+
+    .unic__item {
+        width: 100%;
+    }
+
+    .unic__item:not(:last-child):not(:last-child) {
+        margin-bottom: 35px;
+    }
+
+    .unic__item:nth-child(2n) {
+        justify-content: end;
+    }
+
+    .unic__item:nth-child(2n+1) {
+        justify-content: left;
+    }
+
+    .unic__list {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .unic__item-text {
+        text-align: center;
+        font-size: 15px;
+        padding: 7px 10px;
+        max-width: 75%;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 15px;
+    }
+
+    .unic__list {
+        padding: 0 10px;
+    }
+
+    .unic__item:not(:last-child) {
+        margin-bottom: 13px;
+    }
+
+
+    .unic__title {
+
+        text-align: center;
+        font-size: 15px;
+        font-style: normal;
+        line-height: 20px;
+    }
+}
