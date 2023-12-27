@@ -291,13 +291,16 @@ margin-bottom: 50px;
     }
 
     .garant__submit {
-        font-size: 20px;
-        left: calc(5%);
+        font-size: 18px;
         border-width: 3px;
         padding: 15px;
         bottom: 35px;
     }
 
+    .garant__submit:hover {
+        padding: 18px;
+        border-width: 4px;
+    }
 
 }
 
@@ -339,5 +342,14 @@ margin-bottom: 50px;
         border-width: 3px;
         padding: 10px;
         bottom: 15px;
+    }
+
+    .garant__submit:hover {
+        padding: 13px 15px;
+        border-width: 4px;
+    }
+
+    .garant__submit:focus:not(:active) {
+        box-shadow: 0 0 0 6px rgba(228, 124, 21, 0.4);
     }
 }
