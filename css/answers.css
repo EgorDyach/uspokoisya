@@ -50,6 +50,14 @@ line-height: 36px; /* 48% */
     padding: 50px;
 }
 
+.ui-accordion-header-active .accordion__top-btn {
+    transform: rotate(135deg);
+}
+
+.accordion__top-btn {
+    transition: transform .3s;
+}
+
 .accordion__bottom-text {
     color: var(--white);
     text-align: justify;
