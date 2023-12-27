@@ -1343,18 +1343,27 @@
         });
         if (window.innerWidth < 1024) {
             new Snow({
-                countSnowflake: 20,
-                showSnowBalls: false,
-                showSnowBallsIsMobile: false
+                showSnowBalls: true,
+			showSnowBallsIsMobile: true,
+			showSnowflakes: true,
+			countSnowflake: 20,
+			snowBallsLength: 10,
+			snowBallIterations: 40,
+			snowBallupNum: 1,
+			snowBallIterationsInterval: 1000,
+			clearSnowBalls: 10000,
             })
         } else {
             new Snow({
-                countSnowflake: 50,
-                showSnowBalls: false,
-                // snowBallupNum: 3,
-                // snowBallIterations: 40,
-                // clearSnowBalls: 10,
-                showSnowBallsIsMobile: false,
+			showSnowBalls: true,
+			showSnowBallsIsMobile: true,
+			showSnowflakes: true,
+			countSnowflake: 50,
+			snowBallsLength: 10,
+			snowBallIterations: 40,
+			snowBallupNum: 1,
+			snowBallIterationsInterval: 1000,
+			clearSnowBalls: 10000,
     
             });
         }
