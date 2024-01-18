@@ -9,14 +9,13 @@
     <link rel="icon" type="image/x-icon" href="./img/global/favicon.png">
     <meta name="Keywords"
         content="успокойся!, успокойся, психо-рейтинг, психо-тренер, психология, счастье, спокойствие">
-    <meta name="description" content="Успокойся, пора уже стать счастливым! Наши специалисты помогут тебе в этом!" />
+    <meta name="description" content="Успокойся! – возвращение радости и счастья в твою жизнь! Наши специалисты помогут тебе в этом!" />
     <script src="js/inputmask.min.js"></script>
+
+    <link rel="preload" href="./fonts/GetVoIPGrotesque.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/psychologists.css">
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -56,7 +55,7 @@
             <div class="container">
                 <div class="psyHero__content">
                     <h2 class="psyHero__title">
-                        Консультации у профессиональных психологов
+                        Консультации у лучших психологов
                     </h2>
                     <p class="psyHero__text">
                         Встречи и онлайн-консультации с проверенными специалистами
@@ -292,7 +291,7 @@
                             <div class="psyFback__avatar"></div>
                             <h3 class="psyFback__name">Елена</h3>
                             <span class="psyFback__age">34 года</span>
-                            <p class="psyFback__occupation">Администратор</p>
+                            <p class="psyFback__occupation">Массажист</p>
                         </div>
                         <div class="psyFback__item-interpretation">
                             <h3 class="psyFback__item-title">Помогла ребенку развить эмоциональную исферу</h3>
@@ -409,43 +408,7 @@
             </div>
         </div>
     </div>
-    <script type="module">
-
-        import { Modal } from "../js/modal.js";
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('add-form').addEventListener('click', () => {
-                document.getElementById('add-form').setAttribute('disabled', '')
-            })
-            const tel = document.getElementById('tel')
-            let im = new Inputmask("+7(999) 999-99-99")
-            im.mask(tel)
-            const modal = new Modal({
-                isOpen: (modal) => {
-                },
-                isClose: () => {
-                },
-            });
-    
-            let tabsBtns = document.querySelectorAll('.psyPrice__btn')
-            tabsBtns.forEach(function (tabsbtn) {
-                tabsbtn.addEventListener('click', function (e) {
-                    const path = e.currentTarget.dataset.pricepath;
-                    tabsBtns.forEach(function (btn) {
-                        btn.classList.remove('stages__btn-active')
-                    });
-                    let tabsArr = [...tabsBtns]
-                    e.currentTarget.classList.add('stages__btn-active');
-                    let numActive = tabsArr.indexOf(e.currentTarget)
-                    const swiperNav  =  document.querySelector('.swiper-span')
-                    swiperNav.style.left = `${numActive*25.1}%`
-                    document.querySelectorAll('.price-info').forEach(function (tabsbtn) {
-                        tabsbtn.classList.remove('stages__info-active')
-                    });
-                    document.querySelector(`[data-pricetarget="${path}"]`).classList.add(`stages__info-active`)
-                });
-            });
-        })
-    </script>
+    <script type="module" src="./js/psychologists.js"></script>
 </body>
 
 </html>

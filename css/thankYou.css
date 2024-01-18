@@ -22,6 +22,10 @@
     min-height: 200px;
 }
 
+.testHeader {
+    padding: 25px 0;
+}
+
 @media (max-width:900px) {
     .mainTest .container {
         flex-direction: column;
@@ -43,5 +47,14 @@
 
     .thankYou__img {
         height: 170px;
+    }
+
+    .mainTest {
+        padding-top: 10px;
+    }
+
+    svg {
+        width: 70px;
+        height: auto;
     }
 }

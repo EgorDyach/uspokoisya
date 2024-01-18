@@ -6,43 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Успокойся!</title>
     <meta name="description"
-        content="Успокойся, пора уже стать счастливым! Присоединяйся к нашей игре и выиграй призовые за свое счастье!">
+        content='Психо-мотивационная игра "Успокойся!" – возвращение радости и счастья в твою жизнь!'>
     <meta name="keywords"
         content="успокойся!, успокойся, психо-рейтинг, психо-тренер, психология, счастье, спокойствие">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-    <script src="./js/Snow.js"></script>
-    <link rel="stylesheet" href="./css/snow.min.css">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./img/global/favicon.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preload" href="./fonts/GetVoIPGrotesque.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js" defer></script>
     <script src="./js/jquery.min.js" defer></script>
     <script src="./js/jquery-ui.min.js" defer></script>
     <script src="./js/inputmask.min.js" defer></script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(95836027, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95836027, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/95836027" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95836027" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body class="stop-scroll">
+    <h1 class="visually-hidden">Психо-мотивационная игра "Успокойся!" – возвращение радости и счастья в твою жизнь!</h1>
     <header class="header flex">
         <button class="header__burger btn-reset">
             <span class="burger-line"></span>
@@ -50,7 +64,7 @@
             <span class="burger-line"></span>
         </button>
         <a href="#hero" class="header__link-tohome">
-           <img src="./img/global/logo.svg" alt="Логотип">
+            <img src="./img/header/header__logo.svg" alt="Логотип">
         </a>
         <nav class="header__nav">
             <ul class="header__list flex list-reset">
@@ -78,7 +92,11 @@
     <main>
         <section id="hero" data-aos="fade-right" data-aos-duration="5000" data-aos-delay="300" class="hero flex">
             <div class="hero__man-div">
-                <img src="./img/hero/hero__man.png" alt="Счастливый человек" class="hero__man">
+                <picture >
+                    <source type="image/webp" srcset="./img/hero/hero__man.webp">
+                    <source type="image/png" srcset="./img/hero/hero__man.png">
+                    <img src="./img/hero/hero__man.png" alt="Счастливый человек" class="hero__man">
+                </picture>
             </div>
             <div class="hero__info">
                 <h2 class="hero__money">Мы заплатим</h2>
@@ -94,7 +112,7 @@
                 <span>внутреннему благополучию</span>
             </h2>
             <div data-aos="fade-right" data-aos-delay="300"
-                class="garant__content animate__animated animate__fadeInRight flex">
+                class="garant__content content__container animate__animated animate__fadeInRight flex">
                 <div class="garant__info">
                     <p class="garant__text">
                         Повышение психорейтинга<br> за месяц игры
@@ -137,7 +155,11 @@
                         </span>
                     </p>
                     <div class="garant__info-container">
-                        <img src="./img/garant/garant__info.png" alt="Расстроенный мужчина" class="garant__info-img">
+                        <picture >
+                            <source type="image/webp" srcset="./img/garant/garant__info.webp">
+                            <source type="image/png" srcset="./img/garant/garant__info.png">
+                            <img src="./img/garant/garant__info.png" alt="Расстроенный человек" class="garant__info-img">
+                        </picture>
                     </div>
                 </div>
                 <div class="garant__return-money">
@@ -150,7 +172,7 @@
                 class="develop__title animate__animated animate__fadeInUp">
                 Узнай свой психорейтинг!
             </h2>
-            <div data-aos="zoom-in-right" data-aos-delay="300" class="develop__content flex">
+            <div data-aos="zoom-in-right" data-aos-delay="300" class="develop__content content__container flex">
                 <div class="develop__info flex">
                     <p class="develop__text">
                         Пройди лёгкий тест за 3 минуты и узнай свой психорейтинг!
@@ -159,16 +181,28 @@
                     <a href="./test.html" class="develop__link">Пройти тест</a>
                 </div>
 
-                <div class="develop__img"></div>
+                <div class="develop__img">
+                    <picture >
+                        <source type="image/webp" srcset="./img/develop/develop__img.webp">
+                        <source type="image/png" srcset="./img/develop/develop__img.png">
+                        <img src="./img/develop/develop__img.png" alt="Мужчина проходит тест" class="">
+                    </picture>
+                </div>
             </div>
         </section>
         <section class="forWhom">
-            <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150" class="forWhom__title">Для кого эта игра?</h2>
-            <div class="forWhom__content">
-                <div class="forWhom__card "  data-aos="flip-left" data-aos-delay="300">
+            <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150" class="forWhom__title">
+                Для кого эта игра?</h2>
+            <div class="forWhom__content content__container">
+                <div class="forWhom__card " data-aos="flip-left" data-aos-delay="300">
 
-                    <div class="front">
-                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span> , если каждый день кажется
+                    <div class="front" tabindex="0">
+                        <picture >
+                            <source type="image/webp" srcset="./img/forWhom/forWhom__1.webp">
+                            <source type="image/jpg" srcset="./img/forWhom/forWhom__1.jpg">
+                            <img src="./img/forWhom/forWhom__1.jpg" alt="Мотивационное фото" class="">
+                        </picture>
+                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span>, если каждый день кажется
                             копией предыдущего</h3>
                     </div>
 
@@ -180,16 +214,22 @@
                                     d="M104.687 37.8527C104.356 36.8956 103.754 36.0549 102.955 35.4327C102.156 34.8104 101.193 34.4332 100.184 34.3469L70.3908 30.0039L57.039 2.95172C56.6102 2.06705 55.9408 1.32096 55.1074 0.798921C54.2739 0.276879 53.3102 0 52.3266 0C51.343 0 50.3792 0.276879 49.5458 0.798921C48.7124 1.32096 48.0429 2.06705 47.6142 2.95172L34.2624 29.9516L4.4696 34.3469C3.50054 34.4845 2.58948 34.8909 1.83982 35.5198C1.09017 36.1487 0.531923 36.9751 0.228445 37.905C-0.0493506 38.8138 -0.0742794 39.781 0.156334 40.7028C0.386947 41.6247 0.864397 42.4663 1.53744 43.1375L23.1621 64.0677L17.9261 93.7884C17.7392 94.7694 17.8371 95.7834 18.2082 96.7105C18.5793 97.6377 19.2082 98.4394 20.0205 99.021C20.8123 99.5866 21.7462 99.9205 22.7173 99.9852C23.6884 100.05 24.6584 99.8429 25.5183 99.3872L52.3266 85.4164L79.0302 99.4396C79.765 99.8539 80.595 100.07 81.4387 100.067C82.5478 100.071 83.6296 99.7233 84.528 99.0733C85.3403 98.4918 85.9692 97.69 86.3403 96.7629C86.7114 95.8357 86.8093 94.8217 86.6223 93.8408L81.3864 64.12L103.011 43.1899C103.767 42.5498 104.326 41.7086 104.622 40.7638C104.919 39.819 104.941 38.8096 104.687 37.8527ZM72.4852 58.7828C71.8711 59.3764 71.4117 60.111 71.147 60.9228C70.8824 61.7345 70.8205 62.5986 70.9667 63.4398L74.7366 85.3641L55.0493 74.899C54.2918 74.4959 53.4466 74.285 52.5884 74.285C51.7301 74.285 50.885 74.4959 50.1275 74.899L30.4401 85.3641L34.21 63.4398C34.3563 62.5986 34.2944 61.7345 34.0297 60.9228C33.7651 60.111 33.3057 59.3764 32.6916 58.7828L16.9836 43.0852L39.0272 39.8934C39.8754 39.7755 40.6817 39.4514 41.3755 38.9497C42.0693 38.448 42.6293 37.7838 43.0065 37.0155L52.3266 17.0795L62.1703 37.0678C62.5475 37.8361 63.1075 38.5003 63.8013 39.002C64.4951 39.5038 65.3014 39.8278 66.1496 39.9457L88.1932 43.1375L72.4852 58.7828Z"
                                     fill="#285497" />
                             </svg>
-        
+
                             <h3 class="forWhom__back-title">Дай себе шанс на перемену</h3>
                         </div>
                     </div>
                 </div>
-                <div class="forWhom__card "  data-aos="flip-left" data-aos-delay="600">
+                <div class="forWhom__card " data-aos="flip-left" data-aos-delay="600">
 
-                    <div class="front">
-                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span> , если ты ищешь способы жить
-                            <br>по–другому</h3>
+                    <div class="front" tabindex="0">
+                        <picture >
+                            <source type="image/webp" srcset="./img/forWhom/forWhom__2.webp">
+                            <source type="image/jpg" srcset="./img/forWhom/forWhom__2.jpg">
+                            <img src="./img/forWhom/forWhom__2.jpg" alt="Мотивационное фото" class="">
+                        </picture>
+                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span>, если ты ищешь способы жить
+                            <br>по–другому
+                        </h3>
                     </div>
 
                     <div class="back">
@@ -204,10 +244,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="forWhom__card "  data-aos="flip-left" data-aos-delay="600">
+                <div class="forWhom__card " data-aos="flip-left" data-aos-delay="600">
 
-                    <div class="front">
-                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span> , если несправедливость
+                    <div class="front" tabindex="0">
+                        <picture >
+                            <source type="image/webp" srcset="./img/forWhom/forWhom__3.webp">
+                            <source type="image/jpg" srcset="./img/forWhom/forWhom__3.jpg">
+                            <img src="./img/forWhom/forWhom__3.jpg" alt="Мотивационное фото" class="">
+                        </picture>
+                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span>, если несправедливость
                             раздражает</h3>
                     </div>
 
@@ -223,10 +268,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="forWhom__card"  data-aos="flip-left" data-aos-delay="900">
+                <div class="forWhom__card" data-aos="flip-left" data-aos-delay="900">
 
-                    <div class="front">
-                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span> , если ты хочешь измениться и
+                    <div class="front" tabindex="0">
+                        <picture >
+                            <source type="image/webp" srcset="./img/forWhom/forWhom__4.webp">
+                            <source type="image/jpg" srcset="./img/forWhom/forWhom__4.jpg">
+                            <img src="./img/forWhom/forWhom__4.jpg" alt="Мотивационное фото" class="">
+                        </picture>
+                        <h3 class="forWhom__front-title">Эта игра <span>для тебя</span>, если ты хочешь измениться и
                             изменить мир вокруг себя</h3>
                     </div>
 
@@ -244,7 +294,8 @@
                         </div>
                     </div>
                 </div>
-                <button data-aos="zoom-in" data-aos-anchor-placement="top-bottom" data-aos-delay="150" class="btn-reset forWhom__btn" id="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="109"
+                <button data-aos="zoom-in" data-aos-anchor-placement="top-bottom" data-aos-delay="150"
+                    class="btn-reset forWhom__btn" id="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="109"
                         height="109" viewBox="0 0 109 109" fill="none">
                         <path
                             d="M50.6305 72.4305C50.3961 72.6895 50.1777 72.9625 49.9765 73.248C49.7703 73.5518 49.6053 73.8817 49.486 74.229C49.3289 74.5379 49.2187 74.8685 49.159 75.21C49.1323 75.5728 49.1323 75.9371 49.159 76.3C49.1406 77.0149 49.2899 77.7242 49.595 78.371C49.8398 79.0473 50.2303 79.6615 50.7389 80.1701C51.2475 80.6787 51.8617 81.0692 52.538 81.314C53.1904 81.6023 53.8958 81.7512 54.609 81.7512C55.3223 81.7512 56.0276 81.6023 56.68 81.314C57.3563 81.0692 57.9706 80.6787 58.4791 80.1701C58.9877 79.6615 59.3782 79.0473 59.623 78.371C59.865 77.7083 59.9761 77.005 59.95 76.3C59.9542 75.5827 59.8167 74.8717 59.5455 74.2077C59.2742 73.5437 58.8746 72.9397 58.3695 72.4305C57.8629 71.9197 57.2601 71.5142 56.596 71.2375C55.9318 70.9608 55.2195 70.8184 54.5 70.8184C53.7805 70.8184 53.0682 70.9608 52.4041 71.2375C51.7399 71.5142 51.1372 71.9197 50.6305 72.4305ZM54.5 0C43.7209 0 33.1839 3.19637 24.2214 9.1849C15.259 15.1734 8.27356 23.6852 4.14859 33.6437C0.023614 43.6023 -1.05567 54.5604 1.04723 65.1324C3.15012 75.7044 8.34074 85.4153 15.9627 93.0373C23.5847 100.659 33.2956 105.85 43.8676 107.953C54.4396 110.056 65.3977 108.976 75.3563 104.851C85.3148 100.726 93.8266 93.741 99.8151 84.7786C105.804 75.8161 109 65.2791 109 54.5C109 47.3429 107.59 40.256 104.851 33.6437C102.113 27.0315 98.0981 21.0235 93.0373 15.9627C87.9765 10.9019 81.9685 6.88744 75.3563 4.14856C68.744 1.40968 61.6571 0 54.5 0V0ZM54.5 98.1C45.8768 98.1 37.4471 95.5429 30.2772 90.752C23.1072 85.9612 17.5189 79.1518 14.2189 71.185C10.9189 63.2181 10.0555 54.4516 11.7378 45.994C13.4201 37.5365 17.5726 29.7677 23.6702 23.6701C29.7677 17.5726 37.5365 13.4201 45.9941 11.7378C54.4516 10.0554 63.2182 10.9189 71.185 14.2188C79.1519 17.5188 85.9612 23.1071 90.7521 30.2771C95.5429 37.4471 98.1 45.8767 98.1 54.5C98.1 66.0634 93.5064 77.1532 85.3299 85.3298C77.1533 93.5064 66.0635 98.1 54.5 98.1V98.1ZM54.5 27.25C51.6282 27.2482 48.8066 28.0027 46.3191 29.4379C43.8316 30.873 41.7659 32.9379 40.33 35.425C39.9357 36.0453 39.6709 36.739 39.5516 37.4642C39.4323 38.1895 39.461 38.9315 39.6358 39.6454C39.8107 40.3593 40.1282 41.0305 40.5692 41.6186C41.0102 42.2066 41.5656 42.6994 42.2019 43.0672C42.8383 43.4351 43.5425 43.6704 44.2722 43.759C45.0019 43.8476 45.7419 43.7878 46.4478 43.583C47.1538 43.3782 47.811 43.0327 48.3799 42.5673C48.9489 42.1019 49.4178 41.5263 49.7585 40.875C50.2387 40.0433 50.9301 39.3532 51.7627 38.8747C52.5954 38.3962 53.5397 38.1462 54.5 38.15C55.9454 38.15 57.3317 38.7242 58.3537 39.7463C59.3758 40.7683 59.95 42.1546 59.95 43.6C59.95 45.0454 59.3758 46.4316 58.3537 47.4537C57.3317 48.4758 55.9454 49.05 54.5 49.05C53.0546 49.05 51.6684 49.6242 50.6463 50.6463C49.6242 51.6683 49.05 53.0546 49.05 54.5V59.95C49.05 61.3954 49.6242 62.7816 50.6463 63.8037C51.6684 64.8258 53.0546 65.4 54.5 65.4C55.9454 65.4 57.3317 64.8258 58.3537 63.8037C59.3758 62.7816 59.95 61.3954 59.95 59.95V58.969C63.5545 57.6611 66.5846 55.128 68.5107 51.8124C70.4368 48.4969 71.1364 44.6098 70.487 40.8308C69.8377 37.0517 67.8809 33.6211 64.9585 31.1386C62.0362 28.6562 58.3343 27.2797 54.5 27.25V27.25Z"
@@ -283,30 +334,28 @@
                 </span>
                 – это
             </h2>
-            <div data-aos="zoom-in" data-aos-delay="300" class="thisis__content animate__animated animate__fadeInLeft">
+            <div data-aos="zoom-in" data-aos-delay="300" class="thisis__content content__container animate__animated animate__fadeInLeft">
                 <ul class="thisis__list list-reset">
                     <li class="thisis__item">
-                        <img src="./img/thisis/thisis__1.jpg" alt="Эффективные психо-тренировки"
-                            class="thisis__item-img">
+                            <img srcset="./img/thisis/thisis__1.webp, ./img/thisis/thisis__1.jpg" class="thisis__item-img" src="./img/thisis/thisis__1.jpg" alt="Эффективные психо-тренировки" >
+                        <!-- <img src="./img/thisis/thisis__1.jpg" alt="Эффективные психо-тренировки" -->
+                            <!-- class="thisis__item-img"> -->
                         <h3 class="thisis__item-title">Эффективные психо-тренировки</h3>
                     </li>
                     <li class="thisis__item">
-                        <img src="./img/thisis/thisis__2.jpg" alt="Готовые инструменты для самоконтроля на каждый день"
-                            class="thisis__item-img">
-                        <h3 class="thisis__item-title thisis__item-title-small">Готовые инструменты для самоконтроля на
-                            каждый день</h3>
+                            <img srcset="./img/thisis/thisis__2.webp, ./img/thisis/thisis__2.jpg" class="thisis__item-img" src="./img/thisis/thisis__2.jpg" alt="Эффективные психо-тренировки" >
+                            <h3 class="thisis__item-title">Готовые инструменты для самоконтроля</h3>
                     </li>
                     <li class="thisis__item">
-                        <img src="./img/thisis/thisis__3.jpg" alt="Ежедневная мотивация" class="thisis__item-img">
+                            <img srcset="./img/thisis/thisis__3.webp, ./img/thisis/thisis__3.jpg" class="thisis__item-img" src="./img/thisis/thisis__3.jpg" alt="Эффективные психо-тренировки" >
                         <h3 class="thisis__item-title">Ежедневная мотивация</h3>
                     </li>
                     <li class="thisis__item">
-                        <img src="./img/thisis/thisis__4.jpg" alt="Сближение с родными" class="thisis__item-img">
+                            <img srcset="./img/thisis/thisis__4.webp, ./img/thisis/thisis__4.jpg" class="thisis__item-img" src="./img/thisis/thisis__4.jpg" alt="Эффективные психо-тренировки" >
                         <h3 class="thisis__item-title">Сближение с родными</h3>
                     </li>
                     <li class="thisis__item">
-                        <img src="./img/thisis/thisis__5.jpg" alt="Разжигающий огонь в сердце призовой фонд"
-                            class="thisis__item-img">
+                            <img srcset="./img/thisis/thisis__5.webp, ./img/thisis/thisis__5.jpg" class="thisis__item-img" src="./img/thisis/thisis__5.jpg" alt="Эффективные психо-тренировки" >
                         <h3 class="thisis__item-title thisis__item-title-small">Разжигающий огонь в сердце призовой фонд
                         </h3>
                     </li>
@@ -314,25 +363,18 @@
                 <button data-path="modal" class="thisis__submit btn-reset">Оставить заявку</button>
             </div>
         </section>
-        <!-- <section class="forYou">
-            <h2 class="forYou__title">Для тех, кто хочет быть счастливым</h2>
-            <div class="forYou__content">
-
-            </div>
-        </section> -->
         <section class="willnotbe">
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150" class="willnotbe__title-div">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150"
+                class="willnotbe__title-div">
                 <span>
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="234" height="234" viewBox="0 0 234 234"
-                        fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="234" height="234" viewBox="0 0 234 234" fill="none">
                         <circle cx="117" cy="117" r="103" stroke="#285497" stroke-width="28" />
                         <line x1="47.4833" y1="195.405" x2="183.483" y2="40.4047" stroke="#285497" stroke-width="20" />
-                    </svg> -->
-                    <img src="./img/willnotbe/willnotbe__newYear.png" alt="не будет">
+                    </svg>
                 </span>
                 <h2 class="willnotbe__title animate__animated animate__fadeInUp">Чего точно НЕ будет?</h2>
             </div>
-            <div class="willnotbe__content" data-aos="fade-up" data-aos-delay="300">
+            <div class="willnotbe__content content__container" data-aos="fade-up" data-aos-delay="300">
                 <ul class="willnotbe__list flex list-reset">
                     <li class="willnotbe__item flex">
                         <svg xmlns="http://www.w3.org/2000/svg" width="155" height="215" viewBox="0 0 155 215"
@@ -341,7 +383,7 @@
                                 d="M76.3894 0C69.1679 0 63.3138 5.85416 63.3138 13.0757V159.076L22.5713 100.996C15.6065 91.0671 0 95.9952 0 108.123C0 110.732 0.822321 113.275 2.3501 115.39L72.2138 212.112C74.6087 215.427 79.5465 215.427 81.9415 212.112L151.805 115.39C153.333 113.275 154.155 110.732 154.155 108.123C154.155 95.9952 138.549 91.0671 131.584 100.996L89.4651 161.039V13.0757C89.4651 5.85418 83.6109 0 76.3894 0Z"
                                 fill="#5C87C9" />
                         </svg>
-                        <img src="./img/willnotbe/willnotbe__1.jpg" alt="" class="willnotbe__item-img">
+                        <img srcset="./img/willnotbe/willnotbe__1.webp, ./img/willnotbe/willnotbe__1.jpg" alt="" class="willnotbe__item-img">
                         <h3 class="willnotbe__item-title">Невыполнимых задач</h3>
                     </li>
                     <li class="willnotbe__item flex">
@@ -351,7 +393,7 @@
                                 d="M76.3894 0C69.1679 0 63.3138 5.85416 63.3138 13.0757V159.076L22.5713 100.996C15.6065 91.0671 0 95.9952 0 108.123C0 110.732 0.822321 113.275 2.3501 115.39L72.2138 212.112C74.6087 215.427 79.5465 215.427 81.9415 212.112L151.805 115.39C153.333 113.275 154.155 110.732 154.155 108.123C154.155 95.9952 138.549 91.0671 131.584 100.996L89.4651 161.039V13.0757C89.4651 5.85418 83.6109 0 76.3894 0Z"
                                 fill="#5C87C9" />
                         </svg>
-                        <img src="./img/willnotbe/willnotbe__2.jpg" alt="" class="willnotbe__item-img">
+                        <img srcset="./img/willnotbe/willnotbe__2.webp, ./img/willnotbe/willnotbe__2.jpg" alt="" class="willnotbe__item-img">
                         <h3 class="willnotbe__item-title">Упрёков</h3>
                     </li>
                     <li class="willnotbe__item flex">
@@ -361,7 +403,7 @@
                                 d="M76.3894 0C69.1679 0 63.3138 5.85416 63.3138 13.0757V159.076L22.5713 100.996C15.6065 91.0671 0 95.9952 0 108.123C0 110.732 0.822321 113.275 2.3501 115.39L72.2138 212.112C74.6087 215.427 79.5465 215.427 81.9415 212.112L151.805 115.39C153.333 113.275 154.155 110.732 154.155 108.123C154.155 95.9952 138.549 91.0671 131.584 100.996L89.4651 161.039V13.0757C89.4651 5.85418 83.6109 0 76.3894 0Z"
                                 fill="#5C87C9" />
                         </svg>
-                        <img src="./img/willnotbe/willnotbe__3.jpg" alt="" class="willnotbe__item-img">
+                        <img srcset="./img/willnotbe/willnotbe__3.webp, ./img/willnotbe/willnotbe__3.jpg" alt="" class="willnotbe__item-img">
                         <h3 class="willnotbe__item-title">Абьюза и тирании</h3>
                     </li>
                 </ul>
@@ -369,34 +411,54 @@
         </section>
         <section class="weare">
             <h2 class="weare__title animate__animated animate__fadeInUp">Мы - команда “Успокойся!”</h2>
-            <div class="swiper">
+            <div class="swiper content__container">
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide flex weare__item">
-                        <p class="weare__text">Андрей Запольский</p>
-                        <img src="./img/weare/weare__andrey.png" alt="" class="weare__img">
-                        <p class="weare__text">Создатель "Успокойся!"</p>
+                        <picture class="weare__picture" >
+                            <source type="image/webp" srcset="./img/weare/weare__andrey.webp">
+                            <source type="image/png" srcset="./img/weare/weare__andrey.jpg">
+                            <img src="./img/weare/weare__andrey.jpg" alt="Счастливый человек" class="weare__img">
+                        </picture>
+                        <div class="weare__text-container">
+                            <p class="weare__text">Андрей Запольский</p>
+                            <p class="weare__text">Создатель "Успокойся!"</p>
+                        </div>
                     </div>
                     <div class="swiper-slide flex weare__item">
-                        <p class="weare__text">Алексей Нагирняк</p>
-                        <img src="./img/weare/weare__aleksey.png" alt="" class="weare__img">
-                        <p class="weare__text">Психо-тренер</p>
+                        <picture class="weare__picture" >
+                            <source type="image/webp" srcset="./img/weare/weare__alexey.webp">
+                            <source type="image/png" srcset="./img/weare/weare__alexey.jpg">
+                            <img src="./img/weare/weare__alexey.jpg" alt="Счастливый человек" class="weare__img">
+                        </picture>
+                        <div class="weare__text-container">
+                            <p class="weare__text">Алексей Нагирняк</p>
+                            <p class="weare__text">Психо-тренер</p>
+                        </div>
                     </div>
                     <div class="swiper-slide flex weare__item">
-                        <p class="weare__text">Елена Запольская</p>
-                        <img src="./img/weare/weare__elena.png" alt="" class="weare__img">
-                        <p class="weare__text">Старший психо-тренер</p>
+                        <picture class="weare__picture" >
+                            <source type="image/webp" srcset="./img/weare/weare__elena.webp">
+                            <source type="image/png" srcset="./img/weare/weare__elena.jpg">
+                            <img src="./img/weare/weare__elena.jpg" alt="Счастливый человек" class="weare__img">
+                        </picture>
+                        <div class="weare__text-container">
+                            <p class="weare__text">Елена Запольская</p>
+                            <p class="weare__text">Старший психо-тренер</p>
+                        </div>
                     </div>
                     <div class="swiper-slide flex weare__item">
-                        <p class="weare__text">Егор Дьяченко</p>
-                        <img src="./img/weare/weare__egor.png" alt="" class="weare__img">
-                        <p class="weare__text">IT-специалист</p>
+                        <picture class="weare__picture" >
+                            <source type="image/webp" srcset="./img/weare/weare__egor.webp">
+                            <source type="image/png" srcset="./img/weare/weare__egor.jpg">
+                            <img src="./img/weare/weare__egor.jpg" alt="Счастливый человек" class="weare__img">
+                        </picture>
+                        <div class="weare__text-container">                            
+                            <p class="weare__text">Егор Дьяченко</p>
+                            <p class="weare__text">IT-специалист</p>
+                        </div>
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="92"
                         viewBox="0 0 70 92" fill="none">
                         <path
@@ -416,33 +478,35 @@
                 class="going__title animate__animated animate__fadeInUp">
                 К чему мы стремимся в <br class="going__br"> нашей игре?
             </h2>
-            <div class="going__wasAndWere" data-aos="fade-right" data-aos-delay="300">
-                <p class="going__wasAndWere-text">ДО</p>
-                <p class="going__wasAndWere-text">ПОСЛЕ</p>
+            <div class="content__container" data-aos="fade-right" data-aos-delay="300">
+                <div class="going__wasAndWere">
+                    <p class="going__wasAndWere-text">ДО</p>
+                    <p class="going__wasAndWere-text">ПОСЛЕ</p>
+                </div>
+                <ul class="list-reset going__list" data-aos="fade-right" data-aos-delay="300">
+                    <li class="going__item">
+                        <img src="./img/going/going__1.jpg" alt="Ссорящяся семья" class="going__was going__item-img">
+                        <img src="./img/going/going__2.jpg" alt="Счастливая семья" class="going__willbe going__item-img">
+                    </li>
+                    <li class="going__item">
+                        <img src="./img/going/going__3.jpg" alt="Ссорящяся пара" class="going__was going__item-img">
+                        <img src="./img/going/going__4.jpg" alt="Мирные и любящие друг друга человека"
+                            class="going__willbe going__item-img">
+                    </li>
+                    <li class="going__item">
+                        <img src="./img/going/going__5.jpg" alt="Несчастный и пьющий человек"
+                            class="going__was going__item-img">
+                        <img src="./img/going/going__6.jpg" alt="Поднявшийся с колен, счастливый человек"
+                            class="going__willbe going__item-img">
+                    </li>
+                </ul>
             </div>
-            <ul class="list-reset going__list" data-aos="fade-right" data-aos-delay="300">
-                <li class="going__item">
-                    <img src="./img/going/going__1.jpg" alt="Ссорящяся семья" class="going__was going__item-img">
-                    <img src="./img/going/going__2.jpg" alt="Счастливая семья" class="going__willbe going__item-img">
-                </li>
-                <li class="going__item">
-                    <img src="./img/going/going__3.jpg" alt="Ссорящяся пара" class="going__was going__item-img">
-                    <img src="./img/going/going__4.jpg" alt="Мирные и любящие друг друга человека"
-                        class="going__willbe going__item-img">
-                </li>
-                <li class="going__item">
-                    <img src="./img/going/going__5.jpg" alt="Несчастный и пьющий человек"
-                        class="going__was going__item-img">
-                    <img src="./img/going/going__6.jpg" alt="Поднявшийся с колен, счастливый человек"
-                        class="going__willbe going__item-img">
-                </li>
-            </ul>
         </section>
         <section id="howwillbe" class="howwillbe" data-aos="zoom-in-down" data-aos-delay="300">
             <h2 class="howwillbe__title ">
                 Как всё будет происходить?
             </h2>
-            <div class="howwillbe__content">
+            <div class="howwillbe__content content__container">
                 <ul class="list-reset howwillbe__list">
                     <li class="howwillbe__item flex">
                         <h3 class="howwillbe__item-title">
@@ -518,7 +582,7 @@
             <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150"
                 class="unic__title animate__animated animate__fadeInUp">Уникальная психоигра на уровень счастья от
                 Андрея Запольского</h2>
-            <div class="unic__content flex" data-aos="fade-up-right" data-aos-delay="300">
+            <div class="unic__content content__container flex" data-aos="fade-up-right" data-aos-delay="300">
                 <div class="unic__img-768">
                 </div>
                 <ul class="list-reset flex unic__list">
@@ -544,7 +608,7 @@
             </div>
         </section>
         <section class="qanda">
-            <div class="qanda__phone">
+            <div class="qanda__phone content__container">
                 <ul class="qanda__list-phone list-reset">
                     <li class="qanda__list-pItem">
                         <h3 class="qanda__list-pItem-text">
@@ -565,7 +629,7 @@
                 </ul>
                 <a href="#answers" class="qanda__link">Q&A</a>
             </div>
-            <ul class="qanda__list list-reset flex">
+            <ul class="qanda__list content__container list-reset flex">
                 <li class="qanda__item"><svg xmlns="http://www.w3.org/2000/svg" width="188" height="224"
                         viewBox="0 0 188 224" fill="none">
                         <path
@@ -608,7 +672,7 @@
         <section id="prices" class="prices">
             <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150"
                 class="prices__title animate__animated animate__fadeInUp">Пакеты участия</h2>
-            <div class="prices__content">
+            <div class="prices__content content__container">
                 <ul class="list-reset flex prices__list">
                     <li class="prices__item flex" data-aos="flip-left" data-aos-delay="300">
                         <div class="prices__item-info">
@@ -620,8 +684,6 @@
                                 <li class="prices__item-list--item">Консультации с экспертными психологами</li>
                                 <li class="prices__item-list--item">1 участник</li>
                             </ul>
-                            <!-- <p class="prices__item-was">49 999</p>
-                            <p class="prices__item-now">4 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -639,8 +701,6 @@
                                 <li class="prices__item-list--item">Индивидуальные игры</li>
                                 <li class="prices__item-list--item">1 участник</li>
                             </ul>
-                            <!-- <p class="prices__item-was">79 999</p>
-                            <p class="prices__item-now">7 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -655,8 +715,6 @@
                                 <li class="prices__item-list--item">Книга по семейной психологии</li>
                                 <li class="prices__item-list--item">1-2 участника + Успокойся kids</li>
                             </ul>
-                            <!-- <p class="prices__item-was">99 999</p>
-                            <p class="prices__item-now">9 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -676,8 +734,6 @@
                                 <li class="prices__item-list--item">Индивидуальные игры</li>
                                 <li class="prices__item-list--item">1 участник</li>
                             </ul>
-                            <!-- <p class="prices__item-was">79 999</p>
-                                <p class="prices__item-now">7 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -691,8 +747,6 @@
                                 <li class="prices__item-list--item">Консультации с экспертными психологами</li>
                                 <li class="prices__item-list--item">1 участник</li>
                             </ul>
-                            <!-- <p class="prices__item-was">49 999</p>
-                            <p class="prices__item-now">4 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -707,8 +761,6 @@
                                 <li class="prices__item-list--item">3 книги по психологии</li>
                                 <li class="prices__item-list--item">1-2 участника + Успокойся kids</li>
                             </ul>
-                            <!-- <p class="prices__item-was">99 999</p>
-                                <p class="prices__item-now">9 999</p> -->
                         </div>
                         <button data-path="modal" class="btn-reset prices__item-btn">Оставить заявку</button>
                     </li>
@@ -718,7 +770,7 @@
         <section class="answers" id="answers">
             <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150"
                 class="answers__title animate__animated animate__fadeInUp">Ответы на часто задаваемые вопросы</h2>
-            <ul class="answers__list list-reset">
+            <ul class="answers__list list-reset content__container">
                 <li class="answers__item">
                     <div class="accordion__top flex">
                         <h3 class="accordion__top-title">Что такое психорейтинг?</h3>
@@ -835,12 +887,15 @@
         </section>
     </main>
     <footer class="footer">
-        <ul class="flex list-reset footer__list">
-           <img src="./img/global/logo.svg" alt="Логотип">
+        <ul class="flex list-reset footer__list  content__container">
+            <img src="./img/header/header__logo.svg" class="footer__img" alt="Логотип">
             <ul class="list-reset flex footer__links">
-                <li class="footer__links-item"><a href="#" class="footer__link">Публичная оферта</a></li>
-                <li class="footer__links-item"><a href="#" class="footer__link">Договор</a></li>
-                <li class="footer__links-item"><a href="#" class="footer__link">Правила проведения</a></li>
+                <!-- <li class="footer__links-item"><a href="#" class="footer__link">Публичная оферта</a></li> -->
+                <!-- <li class="footer__links-item"><a href="#" class="footer__link">Договор</a></li> -->
+                <li class="footer__contacts-item"><a href="mailto: uspokoisyarus@mail.ru">e-mail: uspokoisyarus@mail.ru</a></li>
+
+                <li class="footer__contacts-item"><a href="">Наш телеграм бот</a></li>
+                <li class="footer__links-item">Наши СоцСети:</li>
                 <li class="footer__links-item">
                     <a class="footer__link-vk" href="https://vk.com/club223256393"><svg
                             xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -867,10 +922,11 @@
                 </li>
             </ul>
             <ul class="list-reset flex footer__contacts">
-                <li class="footer__contacts-item">ИП</li>
-                <li class="footer__contacts-item">ИНН</li>
-                <li class="footer__contacts-item">ОГРНИП</li>
-                <li class="footer__contacts-item">e-mail: uspokoisyarus@mail.ru</li>
+                <!-- <li class="footer__contacts-item">ИП</li> -->
+                <!-- <li class="footer__contacts-item">ИНН</li> -->
+                <!-- <li class="footer__contacts-item">ОГРНИП</li> -->
+                <li class="footer__contacts-item" style="color: #b8b8b8;"><a href="https://web.telegram.org/k/#@Egor_Dyachenko">Выполнено TDT</a></li>
+
             </ul>
         </ul>
     </footer>
@@ -921,454 +977,7 @@
             </div>
         </div>
     </div>
-    <script>
-                class Modal {
-    constructor(options) {
-        let defaultOptions = {
-            isOpen: () => { },
-            isClose: () => { },
-        }
-        this.options = Object.assign(defaultOptions, options);
-        this.modal = document.querySelector('.modal');
-        this.speed = false;
-        this.animation = false;
-        this.isOpen = false;
-        this.modalContainer = false;
-        this.previousActiveElement = false;
-        this.fixBlocks = document.querySelectorAll('.fix-block');
-        this.focusElements = [
-            'a[href]',
-            'input',
-            'button',
-            'select',
-            'textarea',
-            '[tabindex]'
-        ];
-        this.events();
-    }
-
-    events() {
-        if (this.modal) {
-            document.addEventListener('click', function (e) {
-                const clickedElement = e.target.closest('[data-path]');
-                if (clickedElement) {
-                    let target = clickedElement.dataset.path;
-                    let animation = clickedElement.dataset.animation;
-                    let speed = clickedElement.dataset.speed;
-                    this.animation = animation ? animation : 'fade';
-                    this.speed = speed ? parseInt(speed) : 300;
-                    this.modalContainer = document.querySelector(`[data-target="${target}"]`);
-                    this.open();
-                    return;
-                }
-
-                if (e.target.closest('.modal-close')) {
-                    this.close();
-                    return;
-                }
-            }.bind(this));
-
-            window.addEventListener('keydown', function (e) {
-                if (e.keyCode == 27) {
-                    if (this.isOpen) {
-                        this.close();
-                    }
-                }
-
-                if (e.keyCode == 9 && this.isOpen) {
-                    this.focusCatch(e);
-                    return;
-                }
-
-            }.bind(this));
-
-            this.modal.addEventListener('click', function (e) {
-                if (!e.target.classList.contains('modal__container') && !e.target.closest('.modal__container') && this.isOpen) {
-                    this.close();
-                }
-            }.bind(this));
-        }
-    }
-
-    open() {
-        this.previousActiveElement = document.activeElement;
-        this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-        this.modal.classList.add('is-open');
-        this.disableScroll();
-
-        this.modalContainer.classList.add('modal-open');
-        // this.modalContainer.classList.add(this.animation);
-
-        setTimeout(() => {
-            this.options.isOpen(this);
-            this.modalContainer.classList.add('animate-open');
-            this.isOpen = true;
-            this.focusTrap();
-        }, this.speed);
-    }
-
-    close() {
-        if (this.modalContainer) {
-            this.modalContainer.classList.remove('animate-open');
-            this.modalContainer.classList.remove(this.animation);
-            this.modal.classList.remove('is-open');
-            this.modalContainer.classList.remove('modal-open');
-
-            this.enableScroll();
-            this.options.isClose(this);
-            this.isOpen = false;
-            this.focusTrap();
-        }
-    }
-
-    focusCatch(e) {
-        const focusable = this.modalContainer.querySelectorAll(this.focusElements);
-        const focusArray = Array.prototype.slice.call(focusable);
-        const focusedIndex = focusArray.indexOf(document.activeElement);
-
-        if (e.shiftKey && focusedIndex === 0) {
-            focusArray[focusArray.length - 1].focus();
-            e.preventDefault();
-        }
-
-        if (!e.shiftKey && focusedIndex === focusArray.length - 1) {
-            focusArray[0].focus();
-            e.preventDefault();
-        }
-    }
-
-    focusTrap() {
-        const focusable = this.modalContainer.querySelectorAll(this.focusElements);
-        if (this.isOpen) {
-            focusable[0].focus();
-        } else {
-            this.previousActiveElement.focus();
-        }
-    }
-
-    disableScroll() {
-        let pagePosition = window.scrollY;
-        this.lockPadding();
-        document.body.classList.add('disable-scroll');
-        document.body.dataset.position = pagePosition;
-        console.log(pagePosition)
-    }
-
-    enableScroll() {
-        let pagePosition = parseInt(document.body.dataset.position, 10);
-        this.unlockPadding();
-        document.body.style.top = 'auto';
-        document.body.classList.remove('disable-scroll');
-        document.body.removeAttribute('data-position');
-    }
-
-    lockPadding() {
-        let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-        this.fixBlocks.forEach((el) => {
-            el.style.paddingRight = paddingOffset;
-        });
-        document.body.style.paddingRight = paddingOffset;
-    }
-
-    unlockPadding() {
-        this.fixBlocks.forEach((el) => {
-            el.style.paddingRight = '0px';
-        });
-        document.body.style.paddingRight = '0px';
-    }
-}
-    
-        window.addEventListener('load', function () {
-            document.querySelector('body').classList = ''
-            document.querySelector('.loader-div').style.display = 'none'
-        })
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById('add-form').addEventListener('click', () => {
-                let a = document.getElementById('add-form')
-                a.setAttribute('disabled', '')
-            })
-            
-            const swiper = new Swiper('.swiper', {
-                // Optional parameters
-                direction: 'horizontal',
-                loop: true,
-
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
-
-            // $(function () {
-            $(".answers__list").accordion({
-                icons: false,
-                heightStyle: "content",
-                collapsible: true,
-                active: false
-            });
-
-            if (window.innerWidth < 1000) {
-                // Находим все элементы, которые необходимо отслеживать
-                const elements = document.querySelectorAll('.forWhom__card');
-
-                // Функция для обработки события
-                function onClick(e) {
-                    elements.forEach((element) => {
-                        element.classList.remove("forWhom__card-active") // меняем цвет фона на красный, например
-                    });
-                    e.classList.toggle('forWhom__card-active')
-                }
-
-                // Отслеживаем событие скролла страницы
-                elements.forEach(e => {
-                    e.addEventListener('click', (k) => {
-                        elements.forEach((element) => {
-                            element !== e && element.classList.remove("forWhom__card-active") // меняем цвет фона на красный, например
-                    });
-                    console.log(e)
-                    e.classList.toggle('forWhom__card-active')
-                    });
-                })
-            }
-
-            tippy('#tooltip', {
-                content: "Для появления информации наведите курсор на карточку!"
-            })
-
-            tippy('#tooltipPhone', {
-                content: "Для появления информации кликните по карточке!"
-            })
-
-            let burger = document.querySelector('.header__burger');
-            let menu = document.querySelector('.header__nav');
-            let menulinks = menu.querySelectorAll('.header__link');
-
-
-
-            burger.addEventListener('click',
-
-                function () {
-
-                    burger.classList.toggle('header__burger-active');
-
-                    menu.classList.toggle('header__nav-active');
-
-                    document.body.classList.toggle('stop-scroll');
-                })
-
-            menulinks.forEach(function (el) {
-                el.addEventListener('click', function () {
-                    console.log(111)
-                    burger.classList.toggle('header__burger-active');
-
-                    menu.classList.toggle('header__nav-active');
-
-                    document.body.classList.toggle('stop-scroll');
-
-                })
-            });
-
-            const tel = document.getElementById('tel')
-            let im = new Inputmask("+7(999) 999-99-99")
-            im.mask(tel)
-
-            class Modal {
-                constructor(options) {
-                    let defaultOptions = {
-                        isOpen: () => { },
-                        isClose: () => { },
-                    }
-                    this.options = Object.assign(defaultOptions, options);
-                    this.modal = document.querySelector('.modal');
-                    this.speed = false;
-                    this.animation = false;
-                    this.isOpen = false;
-                    this.modalContainer = false;
-                    this.previousActiveElement = false;
-                    this.fixBlocks = document.querySelectorAll('.fix-block');
-                    this.focusElements = [
-                        'a[href]',
-                        'input',
-                        'button',
-                        'select',
-                        'textarea',
-                        '[tabindex]'
-                    ];
-                    this.events();
-                }
-
-                events() {
-                    if (this.modal) {
-                        document.addEventListener('click', function (e) {
-                            const clickedElement = e.target.closest('[data-path]');
-                            console.log(clickedElement)
-                            if (clickedElement) {
-                                let target = clickedElement.dataset.path;
-                                let animation = clickedElement.dataset.animation;
-                                let speed = clickedElement.dataset.speed;
-                                this.animation = animation ? animation : 'fade';
-                                this.speed = speed ? parseInt(speed) : 300;
-                                this.modalContainer = document.querySelector(`[data-target="${target}"]`);
-                                this.open();
-                                return;
-                            }
-
-                            if (e.target.closest('.modal-close')) {
-                                this.close();
-                                return;
-                            }
-                        }.bind(this));
-
-                        window.addEventListener('keydown', function (e) {
-                            if (e.keyCode == 27) {
-                                if (this.isOpen) {
-                                    this.close();
-                                }
-                            }
-
-                            if (e.keyCode == 9 && this.isOpen) {
-                                this.focusCatch(e);
-                                return;
-                            }
-
-                        }.bind(this));
-
-                        this.modal.addEventListener('click', function (e) {
-                            if (!e.target.classList.contains('modal__container') && !e.target.closest('.modal__container') && this.isOpen) {
-                                this.close();
-                            }
-                        }.bind(this));
-                    }
-                }
-
-                open() {
-                    this.previousActiveElement = document.activeElement;
-                    this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-                    this.modal.classList.add('is-open');
-                    this.disableScroll();
-
-                    this.modalContainer.classList.add('modal-open');
-                    // this.modalContainer.classList.add(this.animation);
-
-                    setTimeout(() => {
-                        this.options.isOpen(this);
-                        this.modalContainer.classList.add('animate-open');
-                        this.isOpen = true;
-                        this.focusTrap();
-                    }, this.speed);
-                }
-
-                close() {
-                    if (this.modalContainer) {
-                        this.modalContainer.classList.remove('animate-open');
-                        this.modalContainer.classList.remove(this.animation);
-                        this.modal.classList.remove('is-open');
-                        this.modalContainer.classList.remove('modal-open');
-
-                        this.enableScroll();
-                        this.options.isClose(this);
-                        this.isOpen = false;
-                        this.focusTrap();
-                    }
-                }
-
-                focusCatch(e) {
-                    const focusable = this.modalContainer.querySelectorAll(this.focusElements);
-                    const focusArray = Array.prototype.slice.call(focusable);
-                    const focusedIndex = focusArray.indexOf(document.activeElement);
-
-                    if (e.shiftKey && focusedIndex === 0) {
-                        focusArray[focusArray.length - 1].focus();
-                        e.preventDefault();
-                    }
-
-                    if (!e.shiftKey && focusedIndex === focusArray.length - 1) {
-                        focusArray[0].focus();
-                        e.preventDefault();
-                    }
-                }
-
-                focusTrap() {
-                    const focusable = this.modalContainer.querySelectorAll(this.focusElements);
-                    if (this.isOpen) {
-                        focusable[0].focus();
-                    } else {
-                        this.previousActiveElement.focus();
-                    }
-                }
-
-                disableScroll() {
-                    let pagePosition = window.scrollY;
-                    this.lockPadding();
-                    document.body.classList.add('disable-scroll');
-                    document.body.dataset.position = pagePosition;
-                    console.log(pagePosition)
-                }
-
-                enableScroll() {
-                    let pagePosition = parseInt(document.body.dataset.position, 10);
-                    this.unlockPadding();
-                    document.body.style.top = 'auto';
-                    document.body.classList.remove('disable-scroll');
-                    document.body.removeAttribute('data-position');
-                }
-
-                lockPadding() {
-                    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-                    this.fixBlocks.forEach((el) => {
-                        el.style.paddingRight = paddingOffset;
-                    });
-                    document.body.style.paddingRight = paddingOffset;
-                }
-
-                unlockPadding() {
-                    this.fixBlocks.forEach((el) => {
-                        el.style.paddingRight = '0px';
-                    });
-                    document.body.style.paddingRight = '0px';
-                }
-            }
-
-            const modal = new Modal({
-                isOpen: (modal) => {
-                },
-                isClose: () => {
-                },
-            });
-
-        });
-        AOS.init({
-            once: true,
-        });
-        if (window.innerWidth < 1024) {
-            new Snow({
-                showSnowBalls: true,
-			showSnowBallsIsMobile: true,
-			showSnowflakes: true,
-			countSnowflake: 20,
-			snowBallsLength: 10,
-			snowBallIterations: 40,
-			snowBallupNum: 1,
-			snowBallIterationsInterval: 1000,
-			clearSnowBalls: 10000,
-            })
-        } else {
-            new Snow({
-			showSnowBalls: true,
-			showSnowBallsIsMobile: true,
-			showSnowflakes: true,
-			countSnowflake: 50,
-			snowBallsLength: 10,
-			snowBallIterations: 40,
-			snowBallupNum: 1,
-			snowBallIterationsInterval: 1000,
-			clearSnowBalls: 10000,
-    
-            });
-        }
-        
-    </script>
+    <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>
